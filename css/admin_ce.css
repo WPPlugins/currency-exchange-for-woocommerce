@@ -1,0 +1,163 @@
+.br_ce_settings .nav-block{
+    display: none;
+}
+.br_ce_settings .nav-block.nav-block-active{
+    display: block;
+}
+.br_ce_settings textarea{
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+}
+.br_ce_lang_select{
+    display: inline-block;
+    width: 100%;
+}
+.ce_currencies .br_ce_lang_select{
+    vertical-align: top;
+}
+@media (min-width: 600px) {
+    .br_ce_lang_select{
+        width: 49%;
+    }
+}
+@media (min-width: 961px) {
+    .br_ce_lang_select{
+        width: 33%;
+    }
+}
+@media (min-width: 1600px) {
+    .br_ce_lang_select{
+        width: 25%;
+    }
+}
+.br_ce_lang_select h3{
+    display: inline-block;
+}
+.br_ce_lang_select input[type=checkbox] ~ div{
+    display: none;
+}
+.br_ce_lang_select input[type=checkbox]:checked ~ div{
+    display: block;
+}
+.br_saved,
+.br_not_saved{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 9999999;
+    color: #333333;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation-name: br_saved_anim;
+    animation-duration: 0.2s;
+    transition: background-color 0.6s;
+    transition: box-shadow 0.6s;
+}
+@keyframes br_saved_anim {
+    from {
+        right: -50px;
+    }
+
+    to {
+        right: 50px;
+    }
+}
+.br_saved_remove {
+    animation-name: br_saved_remove_anim;
+    animation-duration: 0.2s;
+}
+@keyframes br_saved_remove_anim {
+    from {
+        right: 50px;
+    }
+
+    to {
+        right: -50px;
+    }
+}
+.br_saved{
+    box-shadow: 1px 1px 3px 1px #55ff55 inset, 0 0 5px 0;
+    background-color: #33bb33;
+}
+.br_not_saved{
+    box-shadow: 1px 1px 3px 1px #ff5555 inset, 0 0 5px 0;
+    background-color: #bb3333!important;
+}
+.br_saving {
+    box-shadow: 1px 1px 3px 1px #cfcfcf inset, 0 0 5px 0;
+    background-color: #bbbbbb!important;
+}
+.br_saved .fa,
+.br_not_saved .fa{
+    width: 50px;
+    display: block;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 32px;
+}
+.br_saved .fa-check,
+.br_not_saved .fa-times{
+    animation-name: br_saved_anim_fa;
+    animation-duration: 0.4s;
+}
+@keyframes br_saved_anim_fa {
+    0% {
+        font-size: 0px;
+    }
+
+    50% {
+        font-size: 0px;
+    }
+
+    100% {
+        font-size: 32px;
+    }
+}
+.br_currency_text li {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 26px;
+    height: 60px;
+    margin: 0;
+    padding: 0 0 1px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    white-space: nowrap;
+    color: #555;
+    border-color: #ccc;
+    background: #f7f7f7;
+    -webkit-box-shadow: 0 1px 0 #ccc;
+    box-shadow: 0 1px 0 #ccc;
+    vertical-align: top;
+}
+.br_currency_text li .fa {
+    border-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 0 0;
+    width: 50%;
+}
+.br_currency_text li .br_type_of_text {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+.br_currency_text li .fa-caret-left {
+    border-left: 0;
+    float: left;
+}
+.br_currency_text li .fa-caret-right {
+    border-right: 0;
+    float: right;
+}
+.br_currency_text li:first-child .fa-caret-left,
+.br_currency_text li:last-child .fa-caret-right {
+    display: none;
+}
